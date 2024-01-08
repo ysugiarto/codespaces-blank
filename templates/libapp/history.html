@@ -1,0 +1,73 @@
+{% extends '_partials/base.html' %} {% block content %}
+<center>
+ <br />
+ <h1 class="display-5 fw-bold">Your History</h1>
+ <br />
+</center>
+<div class="container">
+ <table class="table">
+   <thead class="thead-dark">
+     <tr>
+       <th scope="col">Book Name</th>
+       <th scope="col">Author Name</th>
+       <th scope="col">Issue Date</th>
+       <th scope="col">Return Date</th>
+     </tr>
+   </thead>
+   <tbody>
+     {% for book in books %}
+     <tr>
+       <td>{{book.book_id.title}}</td>
+       <td>{{book.book_id.author}}</td>
+       <td>{{book.tgl_pinjam}}</td>
+       <td>{{book.tgl_kembali}}</td>
+     </tr>
+     {% endfor %}
+   </tbody>
+ </table>
+</div>
+
+<style>
+ table {
+   border-collapse: collapse;
+   border-spacing: 0;
+   border-radius: 10px;
+   width: 100%;
+   border: 1px solid #ddd;
+ }
+
+ th,
+ td {
+   text-align: left;
+   padding: 16px;
+ }
+
+ tr:nth-child(even) {
+   background-color: #f2f2f2;
+ }
+
+ tr:nth-child(odd) {
+   background-color: #ffffff;
+ }
+
+ .container {
+   width: 100%;
+   padding-right: 15px;
+   padding-left: 15px;
+   margin-right: auto;
+   margin-left: auto;
+ }
+
+ .input-group {
+   width: 100%;
+   margin-bottom: 1rem;
+ }
+
+ body {
+   background: linear-gradient(#87f4b5, #93cbf1);
+   background-repeat: no-repeat;
+   background-attachment: fixed;
+ }
+</style>
+
+{% endblock %}
