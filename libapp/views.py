@@ -4,6 +4,7 @@ from django.contrib.auth import authenticate, login, logout
 from django.contrib import messages
 from django.contrib.auth.decorators import login_required
 from django.core.paginator import Paginator
+from django.urls import reverse
 from .models import Book, Peminjaman
 
 # Create your views here.
@@ -58,14 +59,14 @@ def login_user(request):
             return redirect("login")
         
         login(request, user)
-        return redirect("/")
+        return redirect("home")
     
     else:
         return render(request, "libapp/login.html")
     
 def logout_user(request):
     logout(request)
-    return redirect("/")
+    return redirect("home")
 
 
 @login_required(login_url="login")
