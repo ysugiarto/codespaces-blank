@@ -8,5 +8,6 @@ urlpatterns = [
     path('login', views.login_user, name="login"),
     path('logout', views.logout_user, name="logout"),
     path('pinjam', views.pinjam, name="pinjam"),
-    path('history', views.history, name="history")
+    path('history', views.history, name="history"),
+    path('balikin', views.balikin, name="balikin")
 ]
